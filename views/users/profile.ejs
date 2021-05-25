@@ -1,0 +1,35 @@
+<%- include ('../partials/topHtmlPlate') %>
+
+<h1>Welcome <%=user.name%></h1>
+
+    <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
+
+        Name: <input type="text" name="name" value="<%=user.name%>" /><br> <br>
+        
+        Username: <input type="text" name="username" value=<%=user.username%> /> <br> <br>
+
+        Password: <input type="text" name="password" value=<%=user.password%> /><br> <br>
+
+       Email: <input type="text" name="email" value="<%=user.email%>" /><br> <br>
+
+        About Me: <input type="text" name="aboutme" value="<%=user.aboutme%>" /><br> <br>
+
+       Photo: <input type="text" name="photo" value="<%=user.photo%>" /><br> <br>
+
+        Phone: <input type="text" name="phone" value="<%=user.phone%>" /><br> <br>
+
+        Address: <input type="text" name="address" value="<%=user.address%>" /><br> <br>
+
+        <input type="submit" value="Edit Profile" />
+    </form>
+
+        <form action="/users/<%= user.id %> ?_method=DELETE" method="POST">
+            <input type="submit" value="Delete User" />
+            
+        </form>
+        <a href="/users/usersdetail"><input type="button" value="View All " /> </a>
+
+
+
+
+<%- include( '../partials/bottomHtmlPlate') %>
