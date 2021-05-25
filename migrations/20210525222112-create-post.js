@@ -8,25 +8,27 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tile: {
+      title: {
         type: Sequelize.STRING
       },
       postbody: {
         type: Sequelize.STRING
       },
       like: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       comment: {
         type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       }
     });
   },
