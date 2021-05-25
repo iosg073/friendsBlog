@@ -55,19 +55,28 @@ const userLogin= (req,res) => {
 
 //////////////////////////////////////////////
 
+
 const login = (req, res) => {
 
-    let i=0;
+    User.findOne( { where: {
+         username: req.body.username, 
+         password: req.body.password
+        }
+    }).then ((user) =>{
+        if(user){
 
-    User.findOne( { where: { username: req.body.username, password: req.body.password}}).then (user =>{
-
-        i++;
-
-        res.redirect(`/users/profile/${user.id}`);
+         res.redirect(`/users/profile/${user.id}`);
+        }
+        else
+        {
+            res.redirect('/users/login');
+        }
         
         })
-        if(i==0)
-        res.redirect('/users/login');
+
+        // if(i!==1){
+        // res.redirect('/users/login');
+        // }
 
        }
 
@@ -76,10 +85,11 @@ const login = (req, res) => {
 const userEdit = (req, res) => {
     User.update(req.body, {
         where: {
-            id:req.password.index
+            id:req.params.index
         },
         returning:true
-    }).then(updateUser => {
+    }).then(updatedUser => {
+        console.log(updatedUser[1][0].id);
         res.redirect(`/users/profile/${updatedUser.id}`)
     })
 
@@ -94,5 +104,6 @@ module.exports ={
     renderProfile,
     userDelete,
     userLogin,
-    login
+    login,
+    userEdit
 }

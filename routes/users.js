@@ -10,11 +10,13 @@ router.post('/signup',ctrl.users.userCreate);
 
 router.get('/profile/:index',ctrl.users.renderProfile);
 
-router.get('/login',ctrl.users.userLogin)
+router.get('/login',ctrl.users.userLogin);
 
 router.post('/login',ctrl.users.login);
 
-router.delete('/:index', ctrl.users.userDelete)
+router.put('/profile/:index', ctrl.users.userEdit);
+
+router.delete('/:index', ctrl.users.userDelete);
 
 
 
