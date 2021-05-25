@@ -1,0 +1,12 @@
+<%- include ("../partials/topHtmlPlate") %>
+<h1> I am all user page </h1>
+
+<% for( let i=0; i<users.length; i++) { %> 
+    <p><img src="<%= users[i].photo %>" alt=" Photo"></p>
+    <p> <h2><%= users[i].name %></h2></p>
+    <p> <%= users[i].aboutme %></p>
+
+    
+    <%}%>
+
+<%- include ("../partials/bottomHtmlPlate") %>

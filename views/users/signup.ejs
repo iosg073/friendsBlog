@@ -1,0 +1,11 @@
+<%- include ('../partials/topHtmlPlate') %>
+
+<form action="/users/signup" method="POST">	
+    <input type="text" name="username" placeholder="Username" />
+    <input type="email" name="email" placeholder="Email" />
+    <input type="password" name="password" placeholder="Password" />
+    <input type="text" name="aboutMe" placeholder="About" />
+    <input type="text" name="img" placeholder="User Image" />
+    <input type="submit" value="CREATE ME" />
+</form>
+<%- include( '../partials.bottomHtmlPlate') %>
