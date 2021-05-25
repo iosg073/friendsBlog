@@ -56,14 +56,32 @@ const userLogin= (req,res) => {
 //////////////////////////////////////////////
 
 const login = (req, res) => {
-    User.findOne( { where: { username: req.body.username}}).then (user =>{
+
+    let i=0;
+
+    User.findOne( { where: { username: req.body.username, password: req.body.password}}).then (user =>{
+
+        i++;
+
         res.redirect(`/users/profile/${user.id}`);
-        // res.render('users/Profile.ejs',{ user:user} )
-    })
+        
+        })
+        if(i==0)
+        res.redirect('/users/login');
+
+       }
 
 
-}
+
 const userEdit = (req, res) => {
+    User.update(req.body, {
+        where: {
+            id:req.password.index
+        },
+        returning:true
+    }).then(updateUser => {
+        res.redirect(`/users/profile/${updatedUser.id}`)
+    })
 
 }
 
