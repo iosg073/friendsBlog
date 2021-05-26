@@ -2,25 +2,22 @@ const express = require('express')
 const router = express.Router();
 const ctrl =require('../controllers')
 
-router.get('/allposts',ctrl.posts.showAllPosts)
-router.get('/newpost',ctrl.posts.renderNewpost)
+router.get('/allposts',ctrl.posts.postsShowAll)
+router.get('/newpost',ctrl.posts.postRrenderNew)
 router.post('/newpost',ctrl.posts.postCreate);
-router.delete('/allposts/:index', ctrl.posts.deletePost);
+
+router.get('/allposts/:index/edit',ctrl.posts.postEditShow);
+router.put('/allposts/:index',ctrl.posts.postEdit);
+router.delete('/allposts/:index', ctrl.posts.postDelete);
+
 
 
 module.exports = router;
 
 
 
-// router.get('/profile/:index',ctrl.users.renderProfile);
+// router.get('/:index/edit',ctrl.pokemon.editShow);
 
-// router.get('/login',ctrl.users.userLogin);
+// router.put('/:index',ctrl.pokemon.editPoke);
 
-// router.post('/login',ctrl.users.login);
-
-// router.put('/profile/:index', ctrl.users.userEdit);
-
-// router.delete('/:index', ctrl.users.userDelete);
-
-// action="/users/profile/<%=user.id%>?_method=PUT" method="POST"
-// 
+//<input type="button" value="Edit Post" />

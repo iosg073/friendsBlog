@@ -2,7 +2,7 @@
 
 <a href="/users/signup">Sign UP</a> <br>
 <a href="/users/usersdetail">See All Users</a><br>
-<a href="/users/login">Signin</a>
+<a href="/posts/newpost">Signin</a>
 
 <h1> Welcome to Friends Posts Page </h1>
 <% for (let i=0;i<posts.length; i++) { %> 
@@ -11,20 +11,25 @@
     <form >
     Title: <input type="text" name="title" value="<%=posts[i].title%>" /><br> <br>
         
-    Content: <input type="text" name="postbody" value=<%=posts[i].postbody%> /> <br> <br>
+    Content: <input type="text" name="postbody" value="<%=posts[i].postbody%>" /> <br> <br>
 
-    Comments: <input type="text" name="comment" value=<%=posts[i].comment%> /><br> <br>
+    Comments: <input type="text" name="comment" value="<%=posts[i].comment%>" /><br> <br>
 
    like: <label for="" class=lblsty1><%=posts[i].like%></label> Post Date: <label for="" class=lblsty2><%=posts[i].createdAt%></label>
 
-   <input type="submit" value="Edit Profile" />
-
-</form>
+ </form>
 
 
 
     <form action="/posts/allposts/<%=posts[i].id%>?_method=DELETE" method="POST">
+
+        <a href="/posts/newpost"> <input type="button" value="Create Post" /></a>
+
+        <a href="/posts/allposts/<%=posts[i].id%>/edit"> <input type="button" value="Edit Post" /></a>
+
         <input type="submit" value="Delete User" />
+        
+
         
       </form>
 

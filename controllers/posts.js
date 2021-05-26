@@ -2,7 +2,7 @@ const Post = require('../models').Post;
 
 ////////////////////////////////////////////
 
-const showAllPosts = (req, res) => {
+const postsShowAll = (req, res) => {
     Post.findAll().then(posts => {
         
         res.render('posts/showAllPosts.ejs',{posts:posts})
@@ -12,7 +12,7 @@ const showAllPosts = (req, res) => {
 
 // ///////////////////////////////////////////
 
-const renderNewpost = (req, res) => {
+const postRrenderNew = (req, res) => {
 
     res.render('posts/new.ejs')
  }
@@ -25,8 +25,37 @@ const postCreate = (req, res) => {
         res.redirect ('/posts/allposts');
     })
 }
+/////////////////////////////////////////////////
 
-const deletePost = (req, res) => {
+const postEditShow = (req, res) => {
+
+    Post.findByPk(req.params.index).then(post =>{
+        console.log(post)
+        res.render('posts/postEditShow.ejs', {post})
+    })
+}
+
+////////////////////////////////////////////////
+
+const postEdit = (req, res) => {
+      
+    Post.update (req.body, {
+
+        where: {id: req.params.index},
+
+        returning: true, }).then( postUpdated => {
+           
+
+            res.redirect('/posts/allposts')
+        })
+    
+       
+      }
+
+
+
+
+const postDelete = (req, res) => {
     Post.destroy({
         where: {id: req.params.index}
     })
@@ -35,13 +64,17 @@ const deletePost = (req, res) => {
     })
 }
 
+///////////////////////////////////////////////
 
 
 module.exports= {
-    showAllPosts,
-    renderNewpost,
-    postCreate,
-    deletePost
+    postsShowAll,
+    postRrenderNew,
+    postCreate,    
+    postEditShow,
+    postEdit,
+    postDelete
+    
 }
 
 // const userCreate = (req, res) => {
