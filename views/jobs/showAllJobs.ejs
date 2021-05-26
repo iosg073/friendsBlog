@@ -13,6 +13,17 @@
     Content: <p><%=Jobs[i].detail%></p> <br> <br>
     
     </div>
+    <form action="/jobs/alljobs/<%=Jobs[i].id%>?_method=DELETE" method="POST">
+
+        <a href="/jobs/newjob"> <input type="button" value="Create Job" /></a>
+        
+        <a href="/jobs/alljobs/<%=Jobs[i].id%>/edit"> <input type="button" value="Edit Job" /></a>
+        
+        <input type="submit" value="Delete Job" />
+        
+        
+        
+        </form> 
 
 
    <hr>

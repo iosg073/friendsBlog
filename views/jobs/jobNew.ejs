@@ -1,0 +1,20 @@
+<%- include ( '../partials/topHtmlPlate') %>
+
+<h1> Welcome to Friends  Create Job Page </h1>
+
+<form action='/jobs/newjob' method="POST" >
+
+    Title: <input type="text" name="title" placeholder="Title" /><br> <br>
+        
+    Content: <input type="text" name="detail" placeholder="Content " /> <br> <br>
+
+    Image: <input type="text" name="img" placeholder="image " /> <br> <br>
+     
+    <input type="submit" value="Create Job" />
+
+    </form>
+
+  
+
+
+<%- include ( '../partials/bottomHtmlPlate') %>

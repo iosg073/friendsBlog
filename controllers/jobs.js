@@ -12,19 +12,19 @@ const jobsShowAll = (req, res) => {
 
 // // ///////////////////////////////////////////
 
-// const postRrenderNew = (req, res) => {
+const jobRrenderNew = (req, res) => {
 
-//     res.render('Jobs/new.ejs')
-//  }
+    res.render('jobs/jobNew.ejs')
+ }
 
 // // ///////////////////////////////////////////
 
-// const postCreate = (req, res) => {
+const jobCreate = (req, res) => {
 
-//     Job.create(req.body).then( newUser => {
-//         res.redirect ('/Jobs/allJobs');
-//     })
-// }
+    Job.create(req.body).then( newjob => {
+        res.redirect ('/jobs/alljobs');
+    })
+}
 // /////////////////////////////////////////////////
 
 // const postEditShow = (req, res) => {
@@ -68,7 +68,9 @@ const jobsShowAll = (req, res) => {
 
 
  module.exports= {
-    jobsShowAll
+    jobsShowAll,
+    jobRrenderNew,
+    jobCreate
 //     postRrenderNew,
 //     postCreate,    
 //     postEditShow,
