@@ -55,14 +55,14 @@ const jobCreate = (req, res) => {
 
 
 
-// const postDelete = (req, res) => {
-//     Job.destroy({
-//         where: {id: req.params.index}
-//     })
-//     .then(() => {
-//         res.redirect('/Jobs/allJobs');
-//     })
-// }
+const jobDelete = (req, res) => {
+    Job.destroy({
+        where: {id: req.params.index}
+    })
+    .then(() => {
+        res.redirect('/jobs/alljobs');
+    })
+}
 
 // ///////////////////////////////////////////////
 
@@ -70,7 +70,8 @@ const jobCreate = (req, res) => {
  module.exports= {
     jobsShowAll,
     jobRrenderNew,
-    jobCreate
+    jobCreate,
+    jobDelete 
 //     postRrenderNew,
 //     postCreate,    
 //     postEditShow,

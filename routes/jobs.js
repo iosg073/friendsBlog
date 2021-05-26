@@ -8,7 +8,7 @@ router.post('/newjob',ctrl.jobs.jobCreate);
 
 // router.get('/allposts/:index/edit',ctrl.posts.postEditShow);
 // router.put('/allposts/:index',ctrl.posts.postEdit);
-// router.delete('/allposts/:index', ctrl.posts.postDelete);
+router.delete('/alljobs/:index', ctrl.jobs.jobDelete );
 
 
 

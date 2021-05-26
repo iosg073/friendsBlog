@@ -7,12 +7,12 @@ module.exports = {
        {
      title: 'Associate Project Engineer ',
      detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    img: "https://github.com/iosg073/friendsBlog/blob/feature/job/UP-logo.PNG" 
+    img: "https://csanders429.files.wordpress.com/2018/12/union-pacific-2.jpg" 
     },
     {
       title: 'Develper ',
       detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-     img: "https://github.com/iosg073/friendsBlog/blob/feature/job/apple-logo.PNG" 
+     img: "https://miro.medium.com/max/2048/0*v69IJHr5RnKBwwM1.jpg" 
      }
     ], {});
     
