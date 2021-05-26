@@ -1,0 +1,23 @@
+<%- include ( '../partials/topHtmlPlate') %>
+
+
+
+<h1> Welcome to Friends Jobs Page </h1>
+<% for (let i=0;i<Jobs.length; i++) { %> 
+    <hr>
+    
+    <div>
+    <p><img src=<%=Jobs[i].img%> alt=" Job img"></p>
+    Title: <input type="text" name="title" value="<%=Jobs[i].title%>" /><br> <br>
+        
+    Content: <p><%=Jobs[i].detail%></p> <br> <br>
+    
+    </div>
+
+
+   <hr>
+    
+    <%}%>
+
+
+<%- include ( '../partials/bottomHtmlPlate') %>

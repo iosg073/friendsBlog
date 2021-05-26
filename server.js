@@ -15,6 +15,7 @@ app.use( express.static( 'public'));
 
 app.use('/users', routes.users)
 app.use('/posts',routes.posts)
+app.use('/jobs',routes.jobs)
 
 
 app.get ('/', ( req, res ) => {
