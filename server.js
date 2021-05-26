@@ -14,6 +14,7 @@ const routes = require('./routes');
 app.use( express.static( 'public'));
 
 app.use('/users', routes.users)
+app.use('/posts',routes.posts)
 
 
 app.get ('/', ( req, res ) => {

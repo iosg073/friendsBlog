@@ -1,5 +1,6 @@
 const User = require('../models').User;
 
+
 ///////////////////////////////////////
 
 const showAllUsers = ( req, res) => {
@@ -72,15 +73,11 @@ const login = (req, res) => {
             res.redirect('/users/login');
         }
         
-        })
-
-        // if(i!==1){
-        // res.redirect('/users/login');
-        // }
+        })       
 
        }
 
-
+////////////////////////////////////////////////
 
 const userEdit = (req, res) => {
     User.update(req.body, {

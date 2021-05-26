@@ -2,3 +2,14 @@ h1{
     color:blue;
     
 }
+
+.lblsty1{
+    color: rgb(128, 0, 0);
+    width: 20px;
+    padding-right: 20px;
+}
+.lblsty2{
+    width: 30px;
+    margin-left: 20px;
+}
+
