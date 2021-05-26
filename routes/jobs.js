@@ -6,8 +6,8 @@ router.get('/alljobs',ctrl.jobs.jobsShowAll)
 router.get('/newjob',ctrl.jobs.jobRrenderNew)
 router.post('/newjob',ctrl.jobs.jobCreate);
 
-// router.get('/allposts/:index/edit',ctrl.posts.postEditShow);
-// router.put('/allposts/:index',ctrl.posts.postEdit);
+router.get('/alljobs/:index/edit',ctrl.jobs.jobEditShow);
+router.put('/alljobs/:index',ctrl.jobs.jobEdit);
 router.delete('/alljobs/:index', ctrl.jobs.jobDelete );
 
 

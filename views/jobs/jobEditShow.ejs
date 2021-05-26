@@ -1,0 +1,20 @@
+<%- include ( '../partials/topHtmlPlate') %>
+
+<h1> Welcome to Friends  Edit Job Page </h1>
+
+<form action="/jobs/alljobs/<%=job.id%>?_method=PUT"method="POST" >
+
+    Title: <input type="text" name="title" value="<%=job.title%>" /><br> <br>
+        
+    Content: <input type="text" name="detail" value="<%=job.detail%>" /> <br> <br>
+
+    Image: <input type="text" name="img" value="<%=job.img%>"/> <br> <br>
+     
+    <input type="submit" value="Edit Job" />
+
+    </form>
+
+  
+
+
+<%- include ( '../partials/bottomHtmlPlate') %>

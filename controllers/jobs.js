@@ -27,30 +27,30 @@ const jobCreate = (req, res) => {
 }
 // /////////////////////////////////////////////////
 
-// const postEditShow = (req, res) => {
+const jobEditShow = (req, res) => {
 
-//     Job.findByPk(req.params.index).then(post =>{
-//         console.log(post)
-//         res.render('Jobs/postEditShow.ejs', {post})
-//     })
-// }
+    Job.findByPk(req.params.index).then(job =>{
+        console.log(job)
+        res.render('jobs/jobEditShow.ejs', {job})
+    })
+}
 
 // ////////////////////////////////////////////////
 
-// const postEdit = (req, res) => {
+const jobEdit = (req, res) => {
       
-//     Job.update (req.body, {
+    Job.update (req.body, {
 
-//         where: {id: req.params.index},
+        where: {id: req.params.index},
 
-//         returning: true, }).then( postUpdated => {
+        returning: true, }).then( jobUpdated => {
            
 
-//             res.redirect('/Jobs/allJobs')
-//         })
+            res.redirect('/jobs/alljobs')
+        })
     
        
-//       }
+      }
 
 
 
@@ -71,7 +71,14 @@ const jobDelete = (req, res) => {
     jobsShowAll,
     jobRrenderNew,
     jobCreate,
-    jobDelete 
+    jobEditShow,
+    jobEdit,
+    jobDelete
+    
+      
+
+
+
 //     postRrenderNew,
 //     postCreate,    
 //     postEditShow,
