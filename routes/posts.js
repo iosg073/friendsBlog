@@ -16,8 +16,6 @@ module.exports = router;
 
 
 
-// router.get('/:index/edit',ctrl.pokemon.editShow);
 
-// router.put('/:index',ctrl.pokemon.editPoke);
 
-//<input type="button" value="Edit Post" />
+
