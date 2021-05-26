@@ -1,5 +1,17 @@
 const Job = require('../models').Job;
 
+
+//////////////////////////////////////////////
+
+const jobsHome = (req, res) => {
+    res.render('jobs/jobsHome.ejs')
+}
+
+
+
+
+
+
 ////////////////////////////////////////////
 
 const jobsShowAll = (req, res) => {
@@ -73,7 +85,8 @@ const jobDelete = (req, res) => {
     jobCreate,
     jobEditShow,
     jobEdit,
-    jobDelete
+    jobDelete,
+    jobsHome
     
       
 
