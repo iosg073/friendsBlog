@@ -67,12 +67,40 @@ const postDelete = (req, res) => {
 ///////////////////////////////////////////////
 
 
+//////////////////////
+/////////////////////
+
+const postDeleteUser = (req, res) => {
+    Post.destroy({
+        where: {id: req.params.index}
+    })
+    .then(() => {
+        res.redirect('/users/profile/17');
+    })
+}
+
+
+/////
+
+
+
+
+
+
+
+
+
+/////////////////////
+///////////////////
+
 module.exports= {
     postsShowAll,
     postRrenderNew,
     postCreate,    
     postEditShow,
     postEdit,
-    postDelete
-    
+    postDelete,
+    //////
+    postDeleteUser
+   
 }

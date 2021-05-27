@@ -1,10 +1,15 @@
 <%- include ("../partials/topHtmlPlate") %>
+
 <h1>All user detail page </h1>
 
-<% for( let i=0; i<users.length; i++) { %> 
+<% for( let i=1; i<users.length; i++) { %> 
+
     <a href="/users/profile/<%=users[i].id %>">
-    <p><img src="<%= users[i].photo %>" alt=" Photo"></p>
+
+    <p><img src="<%=users[i].photo %>" alt=" Photo"></p>
+
     <p> <h2><a href="/users/profile/<%=users[i].id %>"><%= users[i].name %></h2></p>
+
     <p> <%= users[i].aboutme %></p></a>
 
     

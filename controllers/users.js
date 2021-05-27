@@ -1,4 +1,6 @@
 const User = require('../models').User;
+const Post= require('../models').Post;
+const Job= require('../models').Job;
 
 
 ///////////////////////////////////////
@@ -32,8 +34,17 @@ const userCreate = (req, res) => {
 
 const renderProfile = (req,res) => {
 
-    User.findByPk(req.params.index).then( foundUser => {
+    User.findByPk(req.params.index, {
+
+        include: [{ model:Post, attributes:['id', 'title', 'postbody']},
+        { model:Job, attributes:['id', 'title', 'detail','img']}]
+       
         
+
+
+    }).then( foundUser => {
+        
+        console.log(foundUser)
         res.render('users/profile.ejs', { user:foundUser});
 
     })
