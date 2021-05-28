@@ -68,12 +68,7 @@
                         <a href="/posts/allposts"><input type="button" value="View All Posts" /> </a>
                         <a href="/jobs/alljobsnoEdit"><input type="button" value="View All Jobs" /> </a>
                         <a href="/users/login"><input type="button" value="Signout " /> </a>
-                    
-
-
-
-
-                          
+                                            
                         </div>
                       </div>
                     </section>
@@ -91,7 +86,7 @@
                                   <p class="card-text"> 
                                    
                                     <hr>
-                                    <p><%= user.Posts[i].title %></p>
+                                    <p><h3><%= user.Posts[i].title %></h3></p>
                                     <p><%= user.Posts[i].postbody %></p>
                                     
                                     <form action="/posts/allposts/<%=user.Posts[i].id%>/<%=user.id%>/delite?_method=DELETE" method="POST">
@@ -115,7 +110,7 @@
                         </div>
                       </div>
 
-
+<hr>
                   
                     <div class="album py-5 bg-light">
                       <div class="container">
@@ -130,7 +125,7 @@
                                 <p class="card-text"> 
                                  
                                    
-                                    <p><%= user.Jobs[i].title %></p>
+                                    <p><h3><%= user.Jobs[i].title %></h3></p>
                                     <p><%= user.Jobs[i].detail %></p>
 
                                     <hr>
