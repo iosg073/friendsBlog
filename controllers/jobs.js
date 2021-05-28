@@ -21,8 +21,15 @@ const jobsShowAll = (req, res) => {
         res.render('Jobs/showAllJobs.ejs',{Jobs:Jobs})
     })
 }
+////---------------///////
 
+const jobsShowAllNoEDIT = (req, res) => {
+    Job.findAll().then(Jobs => {
+        
+        res.render('jobs/showAllJobsNoEdit.ejs',{Jobs:Jobs})
+    })
 
+}
 // // ///////////////////////////////////////////
 ///
 
@@ -88,7 +95,8 @@ const jobDelete = (req, res) => {
     jobEditShow,
     jobEdit,
     jobDelete,
-    jobsHome
+    jobsHome,
+    jobsShowAllNoEDIT
     
       
 

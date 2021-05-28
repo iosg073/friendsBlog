@@ -1,4 +1,31 @@
 <%- include ('../partials/boottop') %>
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+       
+        <div class="col-sm-4 offset-md-1 py-4">
+          
+          <ul id="headerMenu" class="list-unstyled">
+            <li><a href="/users/login" class="text-white">Signout</a></li> 
+            <li><a href="/users/usersdetail" class="text-white">Blogers </a></li>
+            <li><a href="/jobs/alljobsnoEdit" class="text-white">Jobs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Friends Blog</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
 
     <main>
   
@@ -9,7 +36,7 @@
             <p class="lead text-muted">This disclaimer informs readers that the views, thoughts, and opinions expressed in the text belong solely to the author, and not necessarily to the author's employer, organization, committee or other group or individual.</p>
             <p>
              
-              <a href="/users/usersdetail" class="btn btn-secondary my-2">Go Blogger List </a>
+              <a href="/users/usersdetail" class="btn btn-secondary my-2">Blogger List </a>
             </p>
           </div>
         </div>
@@ -23,18 +50,20 @@
             <div class="col">
               <div class="card shadow-sm">
     
-                <div class="card-body">
+                <div class="divbackcolor" class="card-body">
 
-                  
+              
                                 
                     <form >
-                    Title: <input type="text" name="title" value="<%=posts[i].title%>" /><br> <br>
+                     <label class="labelst" for="ti">Title : </label> <input type="text" class="divbackcolor1" name="title" id="ti" value="<%=posts[i].title%>" /><br> <br>
                         
-                    Content: <input type="text" name="postbody" value="<%=posts[i].postbody%>" /> <br> <br>
+                  <textarea id="bd" class="divbackcolor1" name="w3review" rows="4" cols="50"><%=posts[i].postbody%></textarea>
+                    
                 
-                    Comments: <input type="text" name="comment" value="<%=posts[i].comment%>" /><br> <br>
+                  
+                     <label class="labelst" for="cm">   Comments :</label> <input id="cm" type="text" name="comment" value="<%=posts[i].comment%>" /><br> <br>
                 
-                   Post Date: <label for="" class=lblsty2><%=posts[i].createdAt%></label>
+                   <label class="labelst" for="">Post Date :</label><br><%=''+posts[i].createdAt%>
                 
                  </form>   
                        <div class="d-flex justify-content-between align-items-center">

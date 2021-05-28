@@ -5,6 +5,7 @@ const ctrl =require('../controllers')
 
 router.get('/',ctrl.jobs.jobsHome)
 router.get('/alljobs',ctrl.jobs.jobsShowAll)
+router.get('/alljobsnoEdit',ctrl.jobs.jobsShowAllNoEDIT)
 // router.get('/newjob',ctrl.jobs.jobRrenderNew)
 // router.post('/newjob',ctrl.jobs.jobCreate);
 
