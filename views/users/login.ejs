@@ -1,17 +1,48 @@
-<%- include ('../partials/topHtmlPlate') %>
-
-<h1>Login</h1>
-<%- include ('../partials/topHtmlPlate') %>
-
-
-    <form action='/users/login' method="POST" >
+<%- include ('../partials/boottop') %>
+     
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong>Friends Blog</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+    
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            
+            <form action='/users/login' method="POST" >
                 
-        Username: <input type="text" name="username" placeholder=" username" /> <br> <br>
-
-        Password: <input type="text" name="password" placeholder=" password" /><br> <br>
-
-        <input type="submit" value="Login" />
-    </form>
-
-
-<%- include( '../partials/bottomHtmlPlate') %>
+                Username: <input type="text" name="username" placeholder=" username" /> <br> <br>
+        
+                Password: <input type="text" name="password" placeholder=" password" /><br> <br>
+        
+                <input  class="btn btn-primary my-2" type="submit" value="  Login  " /><a href="/users/signup" id="padbtlogin" class="btn btn-secondary my-2">Signup</a>
+            </form>
+           
+          </div>
+        </div>
+      </section>
+           
+    </main>
+    
+    <%- include ('../partials/bootBott') %>

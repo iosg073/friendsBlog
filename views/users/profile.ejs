@@ -25,21 +25,30 @@
 
         <form action="/users/<%= user.id %> ?_method=DELETE" method="POST">
             <input type="submit" value="Delete User" />
-            
         </form>
-        <a href="/users/usersdetail"><input type="button" value="View All " /> </a>
+        
+        
+        <br>
+        <a href="/users/profile/<%=user.id%>/newjob"><input type="button" value="Add Job " /> </a>
+        <a href="/users/profile/<%=user.id%>/newpost"><input type="button" value="Add Post " /> </a>
+        <a href="/users/usersdetail"><input type="button" value="View All Users" /> </a>
+        <a href="/users/login"><input type="button" value="Signout " /> </a>
+    
 
+<div class="divtemp">
         <% for( let i=0; i<user.Posts.length; i++) { %> 
             <hr>
             <p><%= user.Posts[i].title %></p>
             <p><%= user.Posts[i].postbody %></p>
             
-            <form action="/posts/allposts/<%=user.Posts[i].id%>/e?_method=DELETE" method="POST">
+            <form action="/posts/allposts/<%=user.Posts[i].id%>/<%=user.id%>/delite?_method=DELETE" method="POST">
        
-                <input type="submit" value="Delete Job" />              
+                <input type="submit" value="Delete Post" />   
+                <a href="/posts/allposts/<%=user.Posts[i].id%>/<%=user.id%>/edit"><input type="button" value="Edit Post" /></a>            
             
             <%}%>
-
+        </div>
+<hr><hr>
             <% for( let i=0; i<user.Jobs.length; i++) { %> 
                 <hr>
                 <p><img src=<%=user.Jobs[i].img%> alt=" Job img" width="500" height="300"></p>

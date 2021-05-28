@@ -1,4 +1,5 @@
 const Post = require('../models').Post;
+const User = require('../models').User;
 
 ////////////////////////////////////////////
 
@@ -10,28 +11,30 @@ const postsShowAll = (req, res) => {
 }
 
 
-// ///////////////////////////////////////////
+// // ///////////////////////////////////////////
+///////
 
-const postRrenderNew = (req, res) => {
+// const postRrenderNew = (req, res) => {
 
-    res.render('posts/new.ejs')
- }
+//     res.render('posts/new.ejs')
+//  }
 
-// ///////////////////////////////////////////
+// // ///////////////////////////////////////////
 
-const postCreate = (req, res) => {
+// const postCreate = (req, res) => {
 
-    Post.create(req.body).then( newUser => {
-        res.redirect ('/posts/allposts');
-    })
-}
+//     Post.create(req.body).then( newUser => {
+//         res.redirect ('/posts/allposts');
+//     })
+// }
 /////////////////////////////////////////////////
 
 const postEditShow = (req, res) => {
 
-    Post.findByPk(req.params.index).then(post =>{
-        console.log(post)
-        res.render('posts/postEditShow.ejs', {post})
+    Post.findByPk(req.params.index).then(postEdit => {
+       
+        res.render('posts/postEditShow.ejs', { post:postEdit,
+             p:req.params.induser})
     })
 }
 
@@ -39,14 +42,14 @@ const postEditShow = (req, res) => {
 
 const postEdit = (req, res) => {
       
-    Post.update (req.body, {
+    Post.update(req.body, {
 
         where: {id: req.params.index},
 
         returning: true, }).then( postUpdated => {
            
 
-            res.redirect('/posts/allposts')
+            res.redirect(`/users/profile/${req.params.induser}`)
         })
     
        
@@ -75,7 +78,7 @@ const postDeleteUser = (req, res) => {
         where: {id: req.params.index}
     })
     .then(() => {
-        res.redirect('/users/profile/17');
+        res.redirect(`/users/profile/${req.params.index1}`);
     })
 }
 
@@ -95,8 +98,8 @@ const postDeleteUser = (req, res) => {
 
 module.exports= {
     postsShowAll,
-    postRrenderNew,
-    postCreate,    
+    // postRrenderNew,
+    // postCreate,    
     postEditShow,
     postEdit,
     postDelete,

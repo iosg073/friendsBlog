@@ -1,4 +1,5 @@
 const Job = require('../models').Job;
+const User = require('../models').User;
 
 
 //////////////////////////////////////////////
@@ -23,20 +24,21 @@ const jobsShowAll = (req, res) => {
 
 
 // // ///////////////////////////////////////////
+///
 
-const jobRrenderNew = (req, res) => {
+// const jobRrenderNew = (req, res) => {
 
-    res.render('jobs/jobNew.ejs')
- }
+//     res.render('jobs/jobNew.ejs')
+//  }
 
-// // ///////////////////////////////////////////
+// // // ///////////////////////////////////////////
 
-const jobCreate = (req, res) => {
+// const jobCreate = (req, res) => {
 
-    Job.create(req.body).then( newjob => {
-        res.redirect ('/jobs/alljobs');
-    })
-}
+//     Job.create(req.body).then( newjob => {
+//         res.redirect ('/jobs/alljobs');
+//     })
+// }
 // /////////////////////////////////////////////////
 
 const jobEditShow = (req, res) => {
@@ -81,8 +83,8 @@ const jobDelete = (req, res) => {
 
  module.exports= {
     jobsShowAll,
-    jobRrenderNew,
-    jobCreate,
+    // jobRrenderNew,
+    // jobCreate,
     jobEditShow,
     jobEdit,
     jobDelete,

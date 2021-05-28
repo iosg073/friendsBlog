@@ -26,7 +26,8 @@ const userSignUp = (req, res) => {
 const userCreate = (req, res) => {
 
     User.create(req.body).then( newUser => {
-        res.redirect (`/users/profile/${newUser.id}`);
+        // res.redirect (`/users/profile/${newUser.id}`);
+        res.redirect('/users/login')
     })
 }
 
@@ -54,7 +55,7 @@ const renderProfile = (req,res) => {
 
 const userDelete = ( req, res) => {
     User.destroy( { where : { id: req.params.index}}).then(() =>{
-        res.redirect('/')
+        res.redirect('/users/usersdetail')
     })
 }
 
@@ -103,8 +104,49 @@ const userEdit = (req, res) => {
 
 }
 
+//////
+/////
+
+// ///////////////////////////////////////////
+
+const postRrenderNew = (req, res) => {
+
+    res.render('posts/new.ejs',{id:req.params.index})
+ }
+
+// ///////////////////////////////////////////
+
+const postCreate = (req, res) => {
+    req.body.userid=req.params.index
+
+    Post.create(req.body).then( newUser => {
+        // res.redirect ('/posts/allposts');
+        res.redirect(`/users/profile/${req.params.index}`)
+    })
+}
+
+///////
+//////
 
 
+
+const jobRrenderNew = (req, res) => {
+
+    res.render('jobs/jobNew.ejs',{id:req.params.index})
+ }
+
+// // ///////////////////////////////////////////
+
+const jobCreate = (req, res) => {
+
+    req.body.userid=req.params.index
+
+    Job.create(req.body).then( newjob => {
+        res.redirect (`/users/profile/${req.params.index}`);
+    })
+}
+////////////
+////////////
 module.exports ={
     showAllUsers,
     userSignUp,
@@ -113,5 +155,10 @@ module.exports ={
     userDelete,
     userLogin,
     login,
-    userEdit
+    userEdit,
+    postCreate,
+    postRrenderNew ,
+    jobRrenderNew,
+    jobCreate
+    
 }
