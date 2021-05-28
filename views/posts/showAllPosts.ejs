@@ -1,42 +1,63 @@
-<%- include ( '../partials/topHtmlPlate') %>
+<%- include ('../partials/boottop') %>
 
-<a href="/users/signup">Sign UP</a> <br>
-<a href="/users/usersdetail">See All Users</a><br>
-<a href="/posts/newpost">Signin</a>
-
-<h1> Welcome to Friends Posts Page </h1>
-<% for (let i=0;i<posts.length; i++) { %> 
-    <hr>
+    <main>
+  
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Friends Blogs</h1>
+            <p class="lead text-muted">This disclaimer informs readers that the views, thoughts, and opinions expressed in the text belong solely to the author, and not necessarily to the author's employer, organization, committee or other group or individual.</p>
+            <p>
+             
+              <a href="/users/usersdetail" class="btn btn-secondary my-2">Go Blogger List </a>
+            </p>
+          </div>
+        </div>
+      </section>
+     
+      <div class="album py-5 bg-light">
+        <div class="container">
     
-    <form >
-    Title: <input type="text" name="title" value="<%=posts[i].title%>" /><br> <br>
-        
-    Content: <input type="text" name="postbody" value="<%=posts[i].postbody%>" /> <br> <br>
-
-    Comments: <input type="text" name="comment" value="<%=posts[i].comment%>" /><br> <br>
-
-   like: <label for="" class=lblsty1><%=posts[i].like%></label> Post Date: <label for="" class=lblsty2><%=posts[i].createdAt%></label>
-
- </form>
-
-
-
-    <form action="/posts/allposts/<%=posts[i].id%>?_method=DELETE" method="POST">
-
-        <a href="/users/profile/<%=user.id%>/newpost"> <input type="button" value="Create Post" /></a>
-
-        <a href="/posts/allposts/<%=posts[i].id%>/edit"> <input type="button" value="Edit Post" /></a>
-
-        <input type="submit" value="Delete User" />
-        
-
-        
-      </form>
-
-
-   <hr>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <% for (let i=0;i<posts.length; i++) { %> 
+            <div class="col">
+              <div class="card shadow-sm">
     
-    <%}%>
+                <div class="card-body">
 
+                  
+                                
+                    <form >
+                    Title: <input type="text" name="title" value="<%=posts[i].title%>" /><br> <br>
+                        
+                    Content: <input type="text" name="postbody" value="<%=posts[i].postbody%>" /> <br> <br>
+                
+                    Comments: <input type="text" name="comment" value="<%=posts[i].comment%>" /><br> <br>
+                
+                   Post Date: <label for="" class=lblsty2><%=posts[i].createdAt%></label>
+                
+                 </form>   
+                       <div class="d-flex justify-content-between align-items-center">
+                       <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Like:<%=posts[i].like%></button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary"><a>Share</a></button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%}%>
+          </div>
+        </div>
+      </div>
+    
+    </main>
 
-<%- include ( '../partials/bottomHtmlPlate') %>
+    <footer class="text-muted py-5">
+      <div class="container">
+        
+        <p class="mb-1">Friends Blog is &copy; Bootstrap  <a href="https://generalassemb.ly/">GA</a></p>
+      </div>
+    </footer>
+    <%- include( '../partials/bootBott') %>
