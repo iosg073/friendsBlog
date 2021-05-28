@@ -1,18 +1,57 @@
-<%- include ( '../partials/topHtmlPlate') %>
 
-<h1> Welcome to Friends  Create Posts Page </h1>
+<%- include ('../partials/boottop') %>
 
-<form action='/users/profile/<%=id%>/newpost' method="POST" >
 
-    Title: <input type="text" name="title" placeholder="Title" /><br> <br>
-        
-    Content: <input type="text" name="postbody" placeholder="Content " /> <br> <br>
-     
-    <input type="submit" value="Create Post" />
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+         
+          <div class="col-sm-4 offset-md-1 py-4">
+            
+            <ul id="headerMenu" class="list-unstyled">
+              <li><a href="/users/login" class="text-white">Signout</a></li> 
+              <li><a href="/users/usersdetail" class="text-white">Blogers </a></li>
+              <li><a href="/posts/allposts" class="text-white">Posts</a></li>
+              <li><a href="/jobs/alljobsnoEdit" class="text-white">Jobs</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>Friends Blog/Create Post</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    </form>
 
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h2 class="fw-light">Create New Post</strong></h2>
+            <br>
+
+            <form action='/users/profile/<%=id%>/newpost' method="POST" >
+
+                <label class="labelst" for="id1">Title : </label><input id="id1" type="text" name="title" placeholder="Title" /><br> <br>
+                    
+                <label class="labelst" for="id2">Content : </label><input id="id2"type="text" name="postbody" placeholder="Content " /> <br> <br>
+                 
+                <input class="btn btn-primary my-2" type="submit" value="Create Post" />
+            
+                </form>
+            
+
+                              
+          </div>
+        </div>
+      </section>
   
-
-
-<%- include ( '../partials/bottomHtmlPlate') %>
+<%- include( '../partials/bootBott') %>
