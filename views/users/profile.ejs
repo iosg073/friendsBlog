@@ -1,65 +1,5 @@
 <%- include ('../partials/boottop') %>
 
-<h1>Welcome <%=user.name%></h1>
-
-    <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
-
-        Name: <input type="text" name="name" value="<%=user.name%>" /><br> <br>
-        
-        Username: <input type="text" name="username" value=<%=user.username%> /> <br> <br>
-
-        Password: <input type="text" name="password" value=<%=user.password%> /><br> <br>
-
-       Email: <input type="text" name="email" value="<%=user.email%>" /><br> <br>
-
-        About Me: <input type="text" name="aboutme" value="<%=user.aboutme%>" /><br> <br>
-
-       Photo: <input type="text" name="photo" value="<%=user.photo%>" /><br> <br>
-
-        Phone: <input type="text" name="phone" value="<%=user.phone%>" /><br> <br>
-
-        Address: <input type="text" name="address" value="<%=user.address%>" /><br> <br>
-
-        <input type="submit" value="Edit Profile" />
-    </form>
-
-        <form action="/users/<%= user.id %> ?_method=DELETE" method="POST">
-            <input type="submit" value="Delete User" />
-        </form>
-        
-        
-        <br>
-        <a href="/users/profile/<%=user.id%>/newjob"><input type="button" value="Add Job " /> </a>
-        <a href="/users/profile/<%=user.id%>/newpost"><input type="button" value="Add Post " /> </a>
-        <a href="/users/usersdetail"><input type="button" value="View All Users" /> </a>
-        <a href="/users/login"><input type="button" value="Signout " /> </a>
-    
-
-<div class="divtemp">
-        <% for( let i=0; i<user.Posts.length; i++) { %> 
-            <hr>
-            <p><%= user.Posts[i].title %></p>
-            <p><%= user.Posts[i].postbody %></p>
-            
-            <form action="/posts/allposts/<%=user.Posts[i].id%>/<%=user.id%>/delite?_method=DELETE" method="POST">
-       
-                <input type="submit" value="Delete Post" />   
-                <a href="/posts/allposts/<%=user.Posts[i].id%>/<%=user.id%>/edit"><input type="button" value="Edit Post" /></a>            
-            
-            <%}%>
-        </div>
-<hr><hr>
-            <% for( let i=0; i<user.Jobs.length; i++) { %> 
-                <hr>
-                <p><img src=<%=user.Jobs[i].img%> alt=" Job img" width="500" height="300"></p>
-                <p><%= user.Jobs[i].title %></p>
-                <p><%= user.Jobs[i].detail %></p>
-                
-                <form >
-           
-                    <input type="submit" value="Delete Job" />              
-                
-                <%}%>
 
                 <header>
                     <div class="collapse bg-dark" id="navbarHeader">
@@ -71,7 +11,8 @@
                             <ul id="headerMenu" class="list-unstyled">
                               <li><a href="/users/login" class="text-white">Signout</a></li> 
                               <li><a href="/users/usersdetail" class="text-white">Blogers </a></li>
-                              <li><a href="/posts//allposts" class="text-white">Posts</a></li>
+                              <li><a href="/posts/allposts" class="text-white">Posts</a></li>
+                              <li><a href="/jobs/alljobsnoEdit" class="text-white">Jobs</a></li>
                             </ul>
                           </div>
                         </div>
@@ -80,7 +21,6 @@
                     <div class="navbar navbar-dark bg-dark shadow-sm">
                       <div class="container">
                         <a href="#" class="navbar-brand d-flex align-items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                           <strong>Friends Blog</strong>
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,43 +33,132 @@
                   <main>
                   
                     <section class="py-5 text-center container">
-                      <div class="row py-lg-5">
+                      <div class="row py-lg-5"><p><img src=<%=user.photo%> alt=" Job img" width="20%" height="250"></p>
                         <div class="col-lg-6 col-md-8 mx-auto">
-                          <h1 class="fw-light">Album example</h1>
-                          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-                          <p>
-                            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                          </p>
+                          <h2 class="fw-light">Welcome <strong><%=user.name%></strong></h2>
+                          
+                          <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
+
+                            <label  class="labelst" for="id1"> Name :</label><input  id="id1" type="text" name="name" value="<%=user.name%>" /><br> <br>
+                            
+                            <label  class="labelst" for="id2"> User ID :</label> <input id="id2" type="text" name="username" value=<%=user.username%> /> <br> <br>
+                    
+                            <label  class="labelst" for="id3"> Password :</label> <input id="id3" type="password" name="password" value=<%=user.password%> /><br> <br>
+                    
+                            <label  class="labelst" for="id4"> Email :</label><input id="id4"type="text" name="email" value="<%=user.email%>" /><br> <br>
+                    
+                            <label  class="labelst" for="id5"> About Me :</label><input id="id5" type="text" name="aboutme" value="<%=user.aboutme%>" /><br> <br>
+                            <label  class="labelst" for="id6"> Photo <i>url</i> :</label><input id="id6" type="text" name="photo" value="<%=user.photo%>" /><br> <br>
+                    
+                            <label  class="labelst" for="id7"> Phone :</label><input id="id7" type="text" name="phone" value="<%=user.phone%>" /><br> <br>
+                    
+                            <label  class="labelst" for="id8"> Address :</label><input id="id8" type="text" name="address" value="<%=user.address%>" /><br> <br>
+                    
+                            <input  class="btn btn-primary my-2" type="submit" value="Edit  Profile" />
+                        </form>
+                        <form action="/users/<%= user.id %> ?_method=DELETE" method="POST">
+                            <input class="btn btn-secondary my-2" type="submit" value="Delete User" />
+                        </form>
+                        <br>
+                        
+                       
+                        <a href="/users/profile/<%=user.id%>/newjob"><input type="button" value="Add Job " /> </a>
+                        <a href="/users/profile/<%=user.id%>/newpost"><input type="button" value="Add Post " /> </a>
+                        <a href="/users/usersdetail"><input type="button" value="View All Users" /> </a>
+                        <a href="/posts/allposts"><input type="button" value="View All Posts" /> </a>
+                        <a href="/jobs/alljobsnoEdit"><input type="button" value="View All Jobs" /> </a>
+                        <a href="/users/login"><input type="button" value="Signout " /> </a>
+                    
+
+
+
+
+                          
                         </div>
                       </div>
                     </section>
+
+                    <div class="album py-5 bg-light">
+                        <div class="container">
+                    
+                          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                            <% for( let i=0; i<user.Posts.length; i++) { %> 
+                            <div class="col">
+                              <div class="card shadow-sm">
+                                 
+                    
+                                <div class="card-body">
+                                  <p class="card-text"> 
+                                   
+                                    <hr>
+                                    <p><%= user.Posts[i].title %></p>
+                                    <p><%= user.Posts[i].postbody %></p>
+                                    
+                                    <form action="/posts/allposts/<%=user.Posts[i].id%>/<%=user.id%>/delite?_method=DELETE" method="POST">
+                               
+                                        <input type="submit" value="Delete Post" />   
+                                        <a href="/posts/allposts/<%=user.Posts[i].id%>/<%=user.id%>/edit"><input type="button" value="Edit Post" /></a>            
+                                                                       
+  
+                                                 
+                                      
+                                      </p>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                   
+                                  
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <%}%>
+                          </div>
+                        </div>
+                      </div>
+
+
                   
                     <div class="album py-5 bg-light">
                       <div class="container">
                   
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                            <% for( let i=0; i<user.Jobs.length; i++) { %> 
                           <div class="col">
                             <div class="card shadow-sm">
-                              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                                <p><img src=<%=user.Jobs[i].img%> alt=" Job img" width="100%" height="300"></p>
                   
                               <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"> 
+                                 
+                                   
+                                    <p><%= user.Jobs[i].title %></p>
+                                    <p><%= user.Jobs[i].detail %></p>
+
+                                    <hr>
+                                    
+                                    <form >
+                               
+                                        <input type="submit" value="Delete Job" />              
+                                    
+                                    </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                  <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                  </div>
-                                  <small class="text-muted">9 mins</small>
+                                 
+                                
                                 </div>
                               </div>
                             </div>
                           </div>
+                          <%}%>
                         </div>
                       </div>
                     </div>
                   
                   </main>
+                  <footer class="text-muted py-5">
+                    <div class="container">
+                      
+                      <p class="mb-1">Friends Blog is &copy; Code for Good  <a href="https://generalassemb.ly/">GA</a></p>
+                    </div>
+                  </footer>
                 
 
 

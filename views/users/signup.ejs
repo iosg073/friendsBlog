@@ -45,16 +45,20 @@
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             
-            <form action="/users/signup" method="POST">	
-                Enter Name: <input type="text" name="name" placeholder="Full Name" /><br><br>
-                Enter User Name:<input type="text" name="username" placeholder="Username" /><br><br>
-                <input type="password" name="password" placeholder="Password" />
-                <input type="email" name="email" placeholder="Email" />   
-                <input type="text" name="aboutMe" placeholder="About" />
-                <input type="text" name="photo" placeholder="User Image" />
-                <input type="text" name="phone" placeholder="Phone" />
-                <input type="text" name="address" placeholder="address" />
-                <input type="submit" value="CREATE ME" />
+            <form class="formBrd" action="/users/signup" method="POST">	
+              <br> <br>
+
+               <label  class="labelst" for="id1"> Name :</label><input  id="id1" type="text" name="name" placeholder="Full Name" /><br> <br>  
+               <label  class="labelst" for="id2"> User ID :</label> <input id="id2" type="text" name="username" placeholder="Username" /><br><br>
+               <label  class="labelst" for="id3"> Password :</label> <input id="id3" type="password" name="password" placeholder="Password" /><br><br>
+               <label  class="labelst" for="id4"> Email :</label><input id="id4" type="email" name="email" placeholder="Email" />  <br><br> 
+               <label  class="labelst" for="id5"> About Me :</label><input id="id5" type="text" name="aboutMe" placeholder="About" /><br><br>
+               <label  class="labelst" for="id6"> Photo <i>url</i> :</label><input id="id6" type="text" name="photo" placeholder=" Image url" /><br><br>
+               <label  class="labelst" for="id7"> Phone :</label><input id="id7" type="text" name="phone" placeholder="Phone" /><br><br>
+               <label  class="labelst" for="id8"> Address :</label><input id="id8"type="text" name="address" placeholder="address" /> <br><br>             
+                        
+                             
+                <input class="btn btn-primary my-2" type="submit" value="CREATE ME" />
             </form>
            
           </div>
