@@ -8,7 +8,7 @@
 # Project Title:  Friends Blog
 # Description:
 This project, _Friends Blog_ has developed to showcase and solidify skills of NodeJS and Express by implementing MVC (Model, View, Controller) architecture along EJS (Embedded Java Script), ORM (object Relational Model), SQL, Sequelize and PostgreSQL as backend.  This project has provided me a chance to work as independent developer under the supervision of *instructor* and working in group environment but focused to achieve individual tasks.
-![Main page](https://github.com/iosg073/friendsBlog/blob/main/Readmeimages/mvc.PNG)
+
 
 The _Friends Blog_ site allows friends to register by creating user name and password. Each user can create a blog entry for all other user to read, commit or like. The Users also share their professional portfolio by submitting company image and job description. A niece to have features like Hobby is under production. 
 
